@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Logs</title>
+</head>
+<body>
+    <h1>Database Logs</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Client Address</th>
+                <th>Database Name</th>
+                <th>Username</th>
+                <th>Application Name</th>
+                <th>Query Start</th>
+                <th>Query</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log[0] }}</td>
+                <td>{{ log[1] }}</td>
+                <td>{{ log[2] }}</td>
+                <td>{{ log[3] }}</td>
+                <td>{{ log[4] }}</td>
+                <td>{{ log[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

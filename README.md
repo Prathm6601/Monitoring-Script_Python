@@ -1,6 +1,7 @@
 # Monitoring-Script_Python
 
 Install the all python dependency
+
 First install the python then run below command
 - #pip install Flask
 - #pip install Flask-BasicAuth

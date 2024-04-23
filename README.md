@@ -3,11 +3,11 @@
 Install the all python dependency
 
 First install the python then run below command
-- #pip install Flask
-- #pip install Flask-BasicAuth
-- #pip install psycopg2
-- #pip install docker
-- #pip install humanize
+- #pip install Flask [Flask is a micro web framework for Python used for building web applications]
+- #pip install Flask-BasicAuth [ Flask-BasicAuth is an extension for adding HTTP basic access authentication to Flask routes.]
+- #pip install psycopg2 [psycopg2 is a PostgreSQL adapter for Python. It's used for connecting Flask applications to PostgreSQL databases.]
+- #pip install docker [docker is a Python library for interacting with the Docker Engine API. It's used for monitoring Docker containers in your Flask application]
+- #pip install humanize [humanize is a Python package for making numbers more readable by adding commas and converting large numbers to human-readable formats]
 
 - #python3 pythonscriptname.py [run this command]
   

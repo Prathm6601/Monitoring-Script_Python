@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Logs</title>
+    <style>
+        /* Reset default margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif; /* Change font family if needed */
+        }
+
+        /* Set full height for body */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Center content horizontally and vertically */
+        .container {
+            width: 80%; /* Adjust width as needed */
+            max-width: 800px; /* Set maximum width */
+            overflow: auto; /* Add scrollbar if content exceeds container width */
+        }
+
+        /* Style headings and paragraphs */
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Style table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Prevent table from expanding to fit content */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #dddddd;
+            word-wrap: break-word; /* Wrap long content */
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Allow text wrapping for the Name column */
+        td.name-column {
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Docker Logs</h1>
+        <p>Running Containers: {{ running_count }}</p>
+        <p>Stopped Containers: {{ stopped_count }}</p>
+        <p>Paused Containers: {{ paused_count }}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>CPU Usage</th>
+                    <th>Memory Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for container in containers %}
+                <tr>
+                    <td>{{ container['ID'] }}</td>
+                    <td class="name-column">{{ container['Name'] }}</td>
+                    <td>{{ container['Status'] }}</td>
+                    <td>{{ container['CPU Usage'] }}</td>
+                    <td>{{ container['Memory Usage'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

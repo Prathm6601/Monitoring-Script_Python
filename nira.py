@@ -173,7 +173,7 @@ def pm2_qa_logs():
     else:
         return render_template('pm2_qa_logs.html', pm2_qa_logs=pm2_qa_logs)
 
-# Route to handle the PM2 logs request for UAT environment
+# Route to handle the PM2 logs request for UAT environment.
 @app.route('/pm2_uat_logs')
 def pm2_uat_logs():
     global pm2_uat_logs
